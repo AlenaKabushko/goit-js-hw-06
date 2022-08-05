@@ -33,8 +33,13 @@ const galleryItem = images.map((image) =>
 .join("")
 //console.log(galleryItem);
 
-galleryList.style.display = "flex";
-galleryList.style.justifyContent = "space-around";
-galleryList.style.listStyle = "none";
+// galleryList.style.display = "flex";
+// galleryList.style.justifyContent = "space-around";
+// galleryList.style.listStyle = "none";
+
+galleryList.setAttribute(
+  'style',
+  'display: flex; justify-content: space-around; list-style-type: none'
+);
 
 galleryList.insertAdjacentHTML("beforeend", (galleryItem))

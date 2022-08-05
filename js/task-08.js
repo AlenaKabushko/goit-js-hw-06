@@ -1,4 +1,6 @@
 
+//!!!!!!!!!готово
+
 /*Напиши скрипт управления формой логина.
 
 <form class="login-form">
@@ -24,17 +26,28 @@
 формы методом reset.*/
 
 const formRef = document.querySelector(".login-form");
-console.log(formRef);
-const formEmailRef = document.querySelector("name='email'");
-//const formRef = document.querySelector(".login-form");
-
+//console.log(formRef);
+const formEmailRef = formRef.elements.email;
+//console.log(formEmailRef);
+const formPasswordRef = formRef.elements.password;
+//console.log(formPasswordRef);
 
 const submitForm = (event) => {
   event.preventDefault();
 
-  if (email.value === "" || password.value === "");
+  if (formEmailRef.value === "" || formPasswordRef.value === ""){
   const alertMessage = "Все поля должны быть заполнены! Спасибо!";
-  alert(alertMessage);
+  return (alert(alertMessage));
+  }
+
+  const formData = {
+    email: formEmailRef.value, 
+    password: formPasswordRef.value,
+  }
+
+  console.log(formData)
+
+  event.currentTarget.reset();
 }
 
 formRef.addEventListener("submit", submitForm);

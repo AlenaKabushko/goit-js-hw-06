@@ -18,7 +18,7 @@ Category: Products
 Elements: 3
 
 Category: Technologies
-Elements: 5 */
+Elements: 5 */  
 
 const numberOfCategories = document.querySelector("#categories");
 console.log("Number of categories: ", numberOfCategories.children.length);

@@ -14,7 +14,9 @@ const outputRef = document.querySelector('#name-output');
 console.log(inputRef);
 console.log(outputRef);
 
+
 const enteringName = (event) => {
+    inputRef.value.trim();
     outputRef.textContent = event.currentTarget.value;
 }
 

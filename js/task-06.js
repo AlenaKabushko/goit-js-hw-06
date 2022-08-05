@@ -1,4 +1,5 @@
 //!!!!!!!!!!!!!!!!!!!!!!!!ГОТОВО
+//trim ne pashet
 
 //узнатьб только один раз или после обновления 
 //!!!!!!!1 trim i 5
@@ -34,11 +35,13 @@ const inputRef = document.querySelector('#validation-input');
 console.log(inputRef);
 
 const changeBorderColor = (event) => {
+  inputRef.value.trim();
   console.log(event.currentTarget.value.length);
-  event.currentTarget.value.length === 6 
-  ? inputRef.classList.add('valid') 
-  : inputRef.classList.add('invalid');
+  
+  event.currentTarget.value.length !== 6 
+  ? inputRef.classList.add('invalid') 
+  : inputRef.classList.replace('invalid', 'valid');
 }
 
-inputRef.addEventListener("change", changeBorderColor)
+inputRef.addEventListener("blur", changeBorderColor)
 
