@@ -1,3 +1,5 @@
+//!!!!!!!!!!!!!!!!!!!!!!!!ГОТОВО
+
 const images = [
   {
     url: 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
@@ -26,7 +28,13 @@ const images = [
 
 const galleryList = document.querySelector(".gallery");
 
-const galleryItem = images.map((image) => `<li><img ${image}/></li>`)
-// console.log(galleryItem)
+const galleryItem = images.map((image) => 
+(`<li><img src=${image.url} alt=${image.alt} width = 150 height = 100></li>`))
+.join("")
+//console.log(galleryItem);
+
+galleryList.style.display = "flex";
+galleryList.style.justifyContent = "space-around";
+galleryList.style.listStyle = "none";
 
 galleryList.insertAdjacentHTML("beforeend", (galleryItem))

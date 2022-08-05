@@ -1,3 +1,5 @@
+//!!!!!!!!!!!!!!!!!!!!!!!!ГОТОВО
+
 /* Посчитает и выведет в консоль количество категорий 
 в ul#categories, то есть элементов li.item.
 
@@ -22,9 +24,8 @@ const numberOfCategories = document.querySelector("#categories");
 console.log("Number of categories: ", numberOfCategories.children.length);
 
 const categorуElement = numberOfCategories.querySelectorAll(".item");
-console.log(categorуElement);
 
-const categoryTitle = document.querySelectorAll("h2")
-console.log("Category: ", categoryTitle)
-// console.log("Elements: ", ul.children.length)
-//console.log(categorуElement.textContent)
+[...categorуElement].forEach((item) => {
+  console.log("Category: ", item.querySelector("h2").textContent);
+  console.log("Elements: ", item.querySelectorAll("li").length);
+});
