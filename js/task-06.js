@@ -2,7 +2,7 @@
 //trim ne pashet
 
 //узнатьб только один раз или после обновления 
-//!!!!!!!1 trim i 5
+//!!!!!!!1 trim i 5  
 
 /* Напиши скрипт, который при потере фокуса на инпуте (событие blur),
  проверяет его содержимое на правильное количество введённых символов.
@@ -35,10 +35,9 @@ const inputRef = document.querySelector('#validation-input');
 console.log(inputRef);
 
 const changeBorderColor = (event) => {
-  inputRef.value.trim();
-  console.log(event.currentTarget.value.length);
-  
-  event.currentTarget.value.length !== 6 
+  //console.log(event.currentTarget.value.length);
+
+  event.currentTarget.value.trim().length !== Number(inputRef.dataset.length)
   ? inputRef.classList.add('invalid') 
   : inputRef.classList.replace('invalid', 'valid');
 }

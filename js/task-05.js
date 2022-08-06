@@ -11,13 +11,16 @@
 
 const inputRef = document.querySelector('#name-input');
 const outputRef = document.querySelector('#name-output');
-console.log(inputRef);
-console.log(outputRef);
+//console.log(inputRef);
+//console.log(outputRef);
 
 
 const enteringName = (event) => {
-    inputRef.value.trim();
     outputRef.textContent = event.currentTarget.value;
+
+    if (event.currentTarget.value.trim() === "") {
+        outputRef.textContent = "Anonymous"
+    }
 }
 
 inputRef.addEventListener('input', enteringName)
